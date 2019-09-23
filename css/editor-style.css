@@ -1,0 +1,1089 @@
+.wp-block .ugb-container.ugb--content-width .ugb-container__wrapper,
+.wp-block {
+	max-width: 768px;
+}
+
+/* ================================================================================================
+# Form Elements for ACF Blocks
+#
+# FYKI: if this should be extended to default WP blocks as well, 
+# EACH LINE WILL NEED TO BE DUPLICATED, and the .acf-block-preview 
+# class changed to something generic that's common in each default 
+# WP block CONTENT's DIRECT PARENT container classes - otherwise 
+# the styles will overwrite the block control form elements as 
+# well!!!
+================================================================================================ */
+
+.acf-block-preview legend {
+	font: normal 700 27px/27px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-bottom: 0;
+}
+
+.acf-block-preview fieldset {
+	background: #fcfcfa;
+	padding: 18px;
+	box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .1);
+	margin-bottom: 18px;
+}
+
+.acf-block-preview form p {
+	margin: 0;
+}
+
+.acf-block-preview form br {
+	display: none;
+}
+
+.acf-block-preview label,
+.acf-block-preview input[type="text"],
+.acf-block-preview input[type="email"],
+.acf-block-preview input[type="url"],
+.acf-block-preview input[type="password"],
+.acf-block-preview input[type="search"],
+.acf-block-preview input[type="number"],
+.acf-block-preview input[type="tel"],
+.acf-block-preview input[type="range"],
+.acf-block-preview input[type="date"],
+.acf-block-preview input[type="month"],
+.acf-block-preview input[type="week"],
+.acf-block-preview input[type="time"],
+.acf-block-preview input[type="datetime"],
+.acf-block-preview input[type="datetime-local"],
+.acf-block-preview input[type="color"],
+.acf-block-preview textarea,
+.acf-block-preview select,
+.acf-block-preview button,
+.acf-block-preview input[type="button"],
+.acf-block-preview input[type="reset"],
+.acf-block-preview input[type="submit"] {
+	font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.acf-block-preview label {
+	font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 18px 0 4px;
+	display: block;
+}
+
+.acf-block-preview .search-form label {
+	margin: 0;
+}
+
+.acf-block-preview ::-webkit-input-placeholder 	{ color: #ccc; opacity: 1; font-weight: normal; }
+.acf-block-preview ::-moz-placeholder 			{ color: #ccc; opacity: 1; font-weight: normal; }
+.acf-block-preview :-ms-input-placeholder 		{ color: #ccc; opacity: 1; font-weight: normal; }
+.acf-block-preview :-moz-placeholder 			{ color: #ccc; opacity: 1; font-weight: normal; }
+
+.acf-block-preview button,
+.acf-block-preview button:hover,
+.acf-block-preview input,
+.acf-block-preview input:hover,
+.acf-block-preview input:active,
+.acf-block-preview input:focus {
+	border: none;
+}
+
+.acf-block-preview input[type="text"],
+.acf-block-preview input[type="email"],
+.acf-block-preview input[type="url"],
+.acf-block-preview input[type="password"],
+.acf-block-preview input[type="search"],
+.acf-block-preview input[type="number"],
+.acf-block-preview input[type="tel"],
+.acf-block-preview input[type="range"],
+.acf-block-preview input[type="date"],
+.acf-block-preview input[type="month"],
+.acf-block-preview input[type="week"],
+.acf-block-preview input[type="time"],
+.acf-block-preview input[type="datetime"],
+.acf-block-preview input[type="datetime-local"],
+.acf-block-preview input[type="color"],
+.acf-block-preview textarea,
+.acf-block-preview select {
+	color: #221f1f;
+	font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #f8f8f8;
+	border-bottom: #eee solid 3px;
+	border-width: 0 0 3px 0;
+	padding: 8px 16px 8px;	
+}
+
+.acf-block-preview textarea {
+	line-height: 20px;
+	padding: 11px 16px 10px;
+	min-height: 298px;
+	width: 100%;
+}
+
+.acf-block-preview button,
+.acf-block-preview input[type="button"],
+.acf-block-preview input[type="reset"],
+.acf-block-preview input[type="submit"] {
+	background: #0d5f0d;
+	color: #fff;
+	padding: 10px 52px 9px;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.acf-block-preview input[type="reset"],
+.acf-block-preview input[type="submit"] {
+	margin-top: 18px;
+}
+
+.acf-block-preview input[type="reset"] {
+	background: #c4c5c6;
+	color: #f4f5f4;
+}
+
+.acf-block-preview select {
+	padding: 7px 16px 7px;		
+}
+
+.acf-block-preview select:after {}
+
+	/* Gravity Forms */
+
+.acf-block-preview .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	color: #221f1f!important;
+	font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	background: #f8f8f8!important;
+	border-bottom: #eee solid 3px!important;
+	border-width: 0 0 3px 0!important;
+	padding: 8px 16px 8px!important;
+}
+
+.acf-block-preview .gform_wrapper .gform_footer input.button, 
+.acf-block-preview .gform_wrapper .gform_footer input[type=submit], 
+.acf-block-preview .gform_wrapper .gform_page_footer input.button, 
+.acf-block-preview .gform_wrapper .gform_page_footer input[type=submit] {
+	font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	background: #0d5f0d!important;
+	color: #fff!important;
+	padding: 10px 52px 9px!important;
+	text-transform: uppercase!important;
+	font-weight: 700!important;
+	cursor: pointer!important;
+}
+
+	/* EOF Gravity Forms */
+
+	/* Chosen */
+
+	/* Selectize */
+
+.selectize-input {
+    color: #221f1f!important;
+    font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+    background: #f8f8f8!important;
+    border-bottom: #eee solid 3px!important;
+    border-width: 0 0 3px 0!important;
+    padding: 9px 16px 7px!important;
+}
+
+.selectize-control input[type="select-one"] {
+	background: transparent!important;
+    border: none!important;
+    padding: 0!important;	
+}
+
+.selectize-control .selectize-input:after {
+	margin-top: -1px!important;
+}
+
+.selectize-dropdown .option-active {
+	background: red!important;
+}
+
+	/* EOF Selectize */			
+	
+	/* Nice File Input */
+
+.acf-block-preview .NFI-wrapper {
+	color: #221f1f!important;
+	font: normal normal 19px/25px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	background: #f8f8f8!important;
+	border-bottom: #eee solid 3px!important;
+	border-width: 0 0 3px 0!important;
+	padding: 8px 16px 8px!important;		
+
+	width: 100%!important;
+
+    display: -ms-flexbox!important;
+    display: -webkit-flex!important;
+    display: flex!important;
+    -webkit-flex-direction: row!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+    -webkit-flex-wrap: nowrap!important;
+    -ms-flex-wrap: nowrap!important;
+    flex-wrap: nowrap!important;
+    -webkit-justify-content: flex-start!important;
+    -ms-flex-pack: start!important;
+    justify-content: flex-start!important;
+    -webkit-align-content: center!important;
+    -ms-flex-line-pack: center!important;
+    align-content: center!important;
+    -webkit-align-items: stretch!important;
+    -ms-flex-align: stretch!important;
+    align-items: stretch!important;	
+}
+
+.acf-block-preview .NFI-button,
+.acf-block-preview .NFI-filename {
+    -webkit-order: 0!important;
+    -ms-flex-order: 0!important;
+    order: 0!important;
+    -webkit-flex: 0 1 auto!important;
+    -ms-flex: 0 1 auto!important;
+    flex: 0 1 auto!important;
+    -webkit-align-self: auto!important;
+    -ms-flex-item-align: auto!important;
+    align-self: auto!important;
+}
+
+.acf-block-preview .NFI-button {
+	color: #ccc!important;
+	margin-right: 18px;
+}
+
+.acf-block-preview .NFI-filename {
+	padding: 0!important;	
+	background: transparent!important;
+	border: none!important;
+	font-style: italic!important;
+
+    -webkit-flex: 1 1 auto!important;
+    -ms-flex: 1 1 auto!important;
+    flex: 1 1 auto!important;	
+}
+
+	/* EOF Nice File Input */
+
+	/* WP editor defaults */
+
+.wp-core-ui .button, 
+.wp-core-ui .button-secondary,
+.wp-core-ui .button-primary {
+    box-shadow: none;
+    vertical-align: top;
+    border: none;
+    height: auto;
+    border-radius: 0;
+}
+
+.block-editor-block-list__block .input-control, 
+.block-editor-block-list__block input[type=checkbox], 
+.block-editor-block-list__block input[type=color], 
+.block-editor-block-list__block input[type=date], 
+.block-editor-block-list__block input[type=datetime-local], 
+.block-editor-block-list__block input[type=datetime], 
+.block-editor-block-list__block input[type=email], 
+.block-editor-block-list__block input[type=month], 
+.block-editor-block-list__block input[type=number], 
+.block-editor-block-list__block input[type=password], 
+.block-editor-block-list__block input[type=radio], 
+.block-editor-block-list__block input[type=search], 
+.block-editor-block-list__block input[type=tel], 
+.block-editor-block-list__block input[type=text], 
+.block-editor-block-list__block input[type=time], 
+.block-editor-block-list__block input[type=url], 
+.block-editor-block-list__block input[type=week], 
+.block-editor-block-list__block select, 
+.block-editor-block-list__block textarea, 
+.components-modal__content .input-control, 
+.components-modal__content input[type=checkbox], 
+.components-modal__content input[type=color], 
+.components-modal__content input[type=date], 
+.components-modal__content input[type=datetime-local], 
+.components-modal__content input[type=datetime], 
+.components-modal__content input[type=email], 
+.components-modal__content input[type=month], 
+.components-modal__content input[type=number], 
+.components-modal__content input[type=password], 
+.components-modal__content input[type=radio], 
+.components-modal__content input[type=search], 
+.components-modal__content input[type=tel], 
+.components-modal__content input[type=text], 
+.components-modal__content input[type=time], 
+.components-modal__content input[type=url], 
+.components-modal__content input[type=week], 
+.components-modal__content select, 
+.components-modal__content textarea, 
+.components-popover .input-control, 
+.components-popover input[type=checkbox], 
+.components-popover input[type=color], 
+.components-popover input[type=date], 
+.components-popover input[type=datetime-local], 
+.components-popover input[type=datetime], 
+.components-popover input[type=email], 
+.components-popover input[type=month], 
+.components-popover input[type=number], 
+.components-popover input[type=password], 
+.components-popover input[type=radio], 
+.components-popover input[type=search], 
+.components-popover input[type=tel], 
+.components-popover input[type=text], 
+.components-popover input[type=time], 
+.components-popover input[type=url], 
+.components-popover input[type=week], 
+.components-popover select, 
+.components-popover textarea, 
+.edit-post-sidebar .input-control, 
+.edit-post-sidebar input[type=checkbox], 
+.edit-post-sidebar input[type=color], 
+.edit-post-sidebar input[type=date], 
+.edit-post-sidebar input[type=datetime-local], 
+.edit-post-sidebar input[type=datetime], 
+.edit-post-sidebar input[type=email], 
+.edit-post-sidebar input[type=month], 
+.edit-post-sidebar input[type=number], 
+.edit-post-sidebar input[type=password], 
+.edit-post-sidebar input[type=radio], 
+.edit-post-sidebar input[type=search], 
+.edit-post-sidebar input[type=tel], 
+.edit-post-sidebar input[type=text], 
+.edit-post-sidebar input[type=time], 
+.edit-post-sidebar input[type=url], 
+.edit-post-sidebar input[type=week], 
+.edit-post-sidebar select, 
+.edit-post-sidebar textarea, 
+.editor-post-permalink .input-control, 
+.editor-post-permalink input[type=checkbox], 
+.editor-post-permalink input[type=color], 
+.editor-post-permalink input[type=date], 
+.editor-post-permalink input[type=datetime-local], 
+.editor-post-permalink input[type=datetime], 
+.editor-post-permalink input[type=email], 
+.editor-post-permalink input[type=month], 
+.editor-post-permalink input[type=number], 
+.editor-post-permalink input[type=password], 
+.editor-post-permalink input[type=radio], 
+.editor-post-permalink input[type=search], 
+.editor-post-permalink input[type=tel], 
+.editor-post-permalink input[type=text], 
+.editor-post-permalink input[type=time], 
+.editor-post-permalink input[type=url], 
+.editor-post-permalink input[type=week], 
+.editor-post-permalink select, 
+.editor-post-permalink textarea, 
+.editor-post-publish-panel .input-control, 
+.editor-post-publish-panel input[type=checkbox], 
+.editor-post-publish-panel input[type=color], 
+.editor-post-publish-panel input[type=date], 
+.editor-post-publish-panel input[type=datetime-local], 
+.editor-post-publish-panel input[type=datetime], 
+.editor-post-publish-panel input[type=email], 
+.editor-post-publish-panel input[type=month], 
+.editor-post-publish-panel input[type=number], 
+.editor-post-publish-panel input[type=password], 
+.editor-post-publish-panel input[type=radio], 
+.editor-post-publish-panel input[type=search], 
+.editor-post-publish-panel input[type=tel], 
+.editor-post-publish-panel input[type=text], 
+.editor-post-publish-panel input[type=time], 
+.editor-post-publish-panel input[type=url], 
+.editor-post-publish-panel input[type=week], 
+.editor-post-publish-panel select, 
+.editor-post-publish-panel textarea {
+	box-shadow: none;
+	border-radius: 0;
+}
+
+	/* EOF WP editor defaults */
+
+/* ================================================================================================
+# In-Post Subscribe Form
+================================================================================================ */
+
+.wrap--in-post {
+	text-align: center;
+	background: #eee;
+	font: normal 400 13px/18px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #72787c;
+	margin-bottom: 18px;
+	padding: 24px;
+
+	clear: both;
+}
+
+.in-post h1,
+.in-post h2,
+.in-post h3,
+.in-post h4,
+.in-post h5,
+.in-post h6 {
+	font: normal 400 21px/21px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto 16px;
+	width: 100%;
+	max-width: 400px;
+	display: block;
+}
+
+.in-post p:last-child {
+	margin: 0;
+}
+
+.in-post a,
+.in-post a:hover,
+.in-post a:focus {
+	color: #72787c;
+	text-decoration: underline;
+}
+
+.in-post .gform_wrapper {
+	margin: 0 0 15px;
+}
+
+.in-post form {
+    display: -ms-flexbox!important;
+    display: -webkit-flex!important;
+    display: flex!important;
+    -webkit-flex-direction: row!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+    -webkit-flex-wrap: wrap!important;
+    -ms-flex-wrap: wrap!important;
+    flex-wrap: wrap!important;
+	-webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.in-post form > * {
+    -webkit-order: 0!important;
+    -ms-flex-order: 0!important;
+    order: 0!important;
+    -webkit-flex: 0 1 auto!important;
+    -ms-flex: 0 1 auto!important;
+    flex: 0 1 auto!important;
+    -webkit-align-self: flex-start!important;
+    -ms-flex-item-align: start!important;
+    align-self: flex-start!important;
+}
+
+.in-post form > .gform_body {
+    -webkit-flex: 0 1 300px!important;
+    -ms-flex: 0 1 300px!important;
+    flex: 0 1 300px!important;
+}
+
+.in-post form > .gform_footer {
+    -webkit-flex: 0 1 154px!important;
+    -ms-flex: 0 1 154px!important;
+    flex: 0 1 154px!important;	
+}
+
+.in-post .gform_wrapper .gform_header,
+.in-post .gform_wrapper .gform_body,
+.in-post .gform_wrapper .gform_footer,
+.in-post .gform_wrapper .ginput_fields,
+.in-post .gform_wrapper .gfield,
+.in-post .gform_wrapper .ginput_container {
+	margin: 0!important;
+	padding: 0!important;
+}
+
+.in-post .gform_wrapper .gform_body {
+	margin-right: 9px!important;
+}
+
+.in-post .gform_wrapper li {
+	position: relative!important;
+}
+
+.in-post .gform_wrapper input[type="text"],
+.in-post .gform_wrapper input[type="submit"],
+.in-post .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	margin: 0!important;
+}
+
+.in-post .gform_wrapper input[type="text"],
+.in-post .gform_wrapper input[type="submit"] {
+	width: 100%!important;
+}
+
+.in-post .gform_wrapper input[type="text"],
+.in-post .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	border-bottom: 0!important;
+    border: none!important;
+    padding: 10px 16px 9px!important;	
+}
+
+.in-post .gform_wrapper input {
+	margin: 0!important;
+}
+
+.in-post .gform_wrapper .validation_error {
+    color: #fff!important;
+    background: #b8131a!important;
+    border: none!important;
+    -webkit-flex: 0 1 auto!important;
+    -ms-flex: 0 1 auto!important;
+    flex: 0 1 400px!important;
+    margin: 0 calc( ( 100% - 400px ) / 2 ) 21px!important;
+    padding: 9px 24px 11px!important;	
+}
+
+.in-post .gform_wrapper .validation_message {
+	padding: 0!important;
+}
+
+.in-post .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+    margin: 0!important;
+    padding: 0!important;
+    max-width: unset!important;	
+    border: none!important;
+    background: transparent!important;
+}
+
+.in-post .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+    margin: 0!important;
+    padding: 0!important;
+    color: #b8131a!important;
+    background: transparent!important;
+    border: none!important;
+    font-style: italic!important;
+}
+
+.in-post .gform_confirmation_wrapper {
+    background: #0d5f0d!important;
+    color: #fff!important;
+    padding: 9px 24px!important;
+    width: 100%!important;
+    max-width: 320px!important;
+    margin: 0 auto 15px!important;
+}
+
+@media ( max-width: 1024px ) {
+
+	.in-post form > .gform_body {
+	    -webkit-flex: 0 1 calc( 100% - 170px )!important;
+	    -ms-flex: 0 1 calc( 100% - 170px )!important;
+	    flex: 0 1 calc( 100% - 170px )!important;
+	}
+
+}
+
+@media ( max-width: 520px ) {
+
+	.in-post form > .gform_body,
+	.in-post form > .gform_footer,
+	.in-post .gform_wrapper .validation_error {
+	    -webkit-flex: 0 1 100%!important;
+	    -ms-flex: 0 1 100%!important;
+	    flex: 0 1 100%!important;
+
+	    margin-left: 0!important;
+	    margin-right: 0!important;
+	}
+
+	.in-post .gform_wrapper .gform_body {
+		margin: 0 0 9px!important;
+	}	
+
+}
+
+	/* EOF In-Post Subscribe Form -------------------------------------------------------------- */
+
+/* ================================================================================================
+# Utility Classes
+================================================================================================ */
+
+.sr-only {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	left: -9999px;
+	top: -9999px;
+}
+
+.container {
+	max-width: 1260px;
+	width: 100%;
+	margin: auto;
+	padding: 0 30px;
+}
+
+.adslot.container {
+	padding: 0;
+}
+
+.flex-container {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-content: flex-start;
+	-ms-flex-line-pack: start;
+	align-content: flex-start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	}
+
+.flex-item {
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;
+	-webkit-flex: 0 1 50%;
+	-ms-flex: 0 1 50%;
+	flex: 0 1 50%;
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
+}
+
+.responsive-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 0px;
+	height: 0;
+	overflow: hidden;	
+}
+
+.responsive-container iframe,
+.responsive-container object,
+.responsive-container embed,
+.responsive-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+}
+
+.undeco,
+.undeco:hover,
+.undeco:focus {
+	text-decoration: none;
+}
+
+.wrap--ib {
+	font-size: 0;
+}
+
+.ib {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.cap-yellow {
+	color: #f6a62d;
+}
+
+.cap-btn {
+	font: normal 700 18px/18px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #0d5f0d;
+    padding: 13px 24px 13px;
+    border-radius: 0;
+    border: none;
+    margin-top: 9px;
+    min-width: 180px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;	
+}
+
+.cap-btn,
+.cap-btn:hover,
+.cap-btn:focus {
+	text-decoration: none;
+	color: #fff;
+}
+
+/*--------------------------------------------------------------
+## Page Templates - Create Your Expert Network Profile page
+--------------------------------------------------------------*/
+
+/* The Form 
+----------- */
+
+.nwcreate-form_wrapper {
+	margin: 0!important;
+	width: 100%!important;
+	max-width: 786px!important;
+	margin: auto!important;
+}
+
+.nwcreate-form {
+	padding: 56px 0 64px!important;
+}
+
+	/* Paddings and Margins */
+
+.nwcreate-form .gform_heading,
+.nwcreate-form .gform_footer {
+	margin-left: 10px!important;
+}
+
+.nwcreate-form ul.gform_fields li.gfield {
+	padding: 0 10px!important;
+}
+
+.nwcreate-form input[type="submit"] {
+    margin-right: 0!important;
+    display: block!important;
+    width: calc( 33.3333% - 20px )!important;
+    transform: translateX( calc( -50% - 10px ) )!important;
+    margin-left: 50%!important;	
+}
+
+	/* EOF Paddings and Margins */
+
+.nwcreate-form .gform_fields {
+    display: -ms-flexbox!important;
+    display: -webkit-flex!important;
+    display: flex!important;
+    -webkit-flex-direction: row!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+    -webkit-flex-wrap: wrap!important;
+    -ms-flex-wrap: wrap!important;
+    flex-wrap: wrap!important;
+    -webkit-justify-content: flex-start!important;
+    -ms-flex-pack: start!important;
+    justify-content: flex-start!important;
+    -webkit-align-content: stretch!important;
+    -ms-flex-line-pack: stretch!important;
+    align-content: stretch!important;	
+}
+
+.nwcreate-form .gfield {
+    -webkit-order: 0!important;
+    -ms-flex-order: 0!important;
+    order: 0!important;
+    -webkit-flex: 0 1 33.3333%!important;
+    -ms-flex: 0 1 33.3333%!important;
+    flex: 0 1 33.3333%!important;
+    -webkit-align-self: auto!important;
+    -ms-flex-item-align: auto!important;
+    align-self: auto!important;
+
+    margin-top: 11px!important;
+}
+
+.nwcreate-form .gfield.gsection,
+.nwcreate-form .gfield#field_3_28 {
+    -webkit-flex: 0 1 100%!important;
+    -ms-flex: 0 1 100%!important;
+    flex: 0 1 100%!important;
+}
+
+.nwcreate-form h3.gform_title {
+	font: normal 700 33px/33px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;	
+	text-align: center!important;
+	margin-bottom: 66px!important;
+}
+
+.nwcreate-form .gfield.gsection {
+	margin: 0!important;
+	border: none!important;	
+}
+
+.nwcreate-form .gfield.gsection h2 {
+	font: normal 700 24px/24px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	margin-bottom: 1px!important;
+}
+
+.nwcreate-form .top_label input.medium {
+	width: 100%!important;
+}
+
+.nwcreate-form .gfield_label {
+	font: normal normal 16px/30px 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	margin: 0!important;
+}
+
+.nwcreate-form .ginput_container {
+	margin: 0!important;
+}
+
+.nwcreate-form .NFI-button {
+	margin-right: 0;
+}
+
+.nwcreate-form .NFI-button:after {
+	content: '';
+	background: #f8f8f8;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: 0;
+
+	content: "\f03e";
+	font: normal 700 16px/42px "Font Awesome 5 Free";	
+	color: #ccc;
+	font-size: 24px;
+	line-height: 27px;
+	text-align: left;
+}
+
+.nwcreate-form .NFI-button input {
+	z-index: 1;
+}
+
+.nwcreate-form textarea {
+	display: block!important;
+}
+
+.nwcreate-form .gform_footer {
+	margin-top: 24px!important;
+}
+
+@media ( max-width: 640px ) {
+
+	.nwcreate-form .gfield {
+	    -webkit-flex: 0 1 50%!important;
+	    -ms-flex: 0 1 50%!important;
+	    flex: 0 1 50%!important;
+	}
+
+	.nwcreate-form .gfield.gsection,
+	.nwcreate-form .gfield#field_3_28 {
+	    -webkit-flex: 0 1 100%!important;
+	    -ms-flex: 0 1 100%!important;
+	    flex: 0 1 100%!important;
+	}
+
+	.nwcreate-form input[type="submit"] {
+	    width: calc( 50% - 20px )!important;
+	}
+
+}
+
+@media ( max-width: 480px ) {
+
+		/* Paddings and Margins */
+
+	.nwcreate-form .gform_heading,
+	.nwcreate-form .gform_footer {
+		margin-left: 0!important;
+	}
+
+	.nwcreate-form ul.gform_fields li.gfield {
+		padding: 0 0!important;
+	}
+
+	.nwcreate-form input[type="submit"] {
+	    margin-right: 0!important;
+	    width: 100%!important;
+	    transform: none!important;
+	    margin-left: 0!important;	
+	}
+
+		/* EOF Paddings and Margins */
+
+
+	.nwcreate-form .gfield,
+	.nwcreate-form .gfield.gsection,
+	.nwcreate-form .gfield#field_3_28 {
+	    -webkit-flex: 0 1 100%!important;
+	    -ms-flex: 0 1 100%!important;
+	    flex: 0 1 100%!important;
+	}
+
+	.nwcreate-form .gfield.gsection,
+	.nwcreate-form .gfield#field_3_28 {
+	    -webkit-flex: 0 1 100%!important;
+	    -ms-flex: 0 1 100%!important;
+	    flex: 0 1 100%!important;
+	}
+
+
+}
+
+/* Block - Feature Grid 
+----------------------- */
+
+.page-template-page-nwcreate .wp-block-ugb-container.createnw--whatyouget {
+	padding: 38px 0 37px;
+	box-shadow: inset 0 1px 17px -8px rgba(0, 0, 0, .1)!important;
+}
+
+.wp-block-ugb-container {
+	padding: 0;
+}
+
+.cap-features {
+	width: calc(100% + 130px);
+    margin-left: -65px;	
+}
+
+.cap-feature {
+	-webkit-flex: 0 1 33.3333%;
+    -ms-flex: 0 1 33.3333%;
+    flex: 0 1 33.3333%;
+
+    padding: 0 65px;
+}
+
+.cap-feature.nth-1 {
+	margin: 0 33.3333%; 	
+}
+
+.cap-feature.nth-2 {
+	-webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+}
+
+.wrap--cap-features h3 {
+	font: normal 700 30px/30px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	text-align: center!important;
+	margin-bottom: 42px!important;
+}
+
+.cap-feature h4 {
+	font: normal 400 24px/24px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-bottom: 15px;
+}
+
+.cap-feature h4 i {
+	color: #f6a52d;
+	margin-right: 9px;
+}
+
+@media ( max-width: 1000px ) {
+
+	.cap-features {
+		width: calc(100% + 64px);
+	    margin-left: -32px;	
+	}
+
+	.cap-feature {
+		padding: 0 32px;
+	}
+
+}
+
+@media ( max-width: 960px ) and ( min-width: 560px ) {
+
+	.cap-feature {
+		text-align: center;
+	}
+
+	.cap-feature h4 {
+		margin-bottom: 24px;
+	}
+
+	.cap-feature h4 i {
+		display: block;
+		margin: 0 0 9px 0;
+	}
+
+}
+
+@media ( max-width: 1000px ) {
+
+	.wrap--cap-features h3 {
+		text-align: left;
+	}
+
+	.cap-features {
+		width: 100%;
+	    margin-left: 0;	
+
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;	    
+	}
+
+	.cap-feature,
+	.cap-feature.nth-1,
+	.cap-feature.nth-2 {
+		-webkit-flex: 0 1 100%;
+	    -ms-flex: 0 1 100%;
+	    flex: 0 1 100%;
+
+	    padding: 0;
+	    margin: 0 0 19px;
+	}
+
+	.cap-feature:last-child,
+	.cap-feature.nth-1:last-child,
+	.cap-feature.nth-2:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+/* Block - Definition List 
+-------------------------- */
+
+.page-template-page-nwcreate .nwcreate--faq {
+	padding: 69px 0 34px;
+}
+
+.wrap--cap-dl h3 {
+	font: normal 400 28px/28px 'PT Sans Narrow', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #545a5e;
+	text-align: center;
+	margin-bottom: 63px;
+}
+
+.cap-dl {
+	width: 100%;
+	max-width: 840px;
+	margin: 0 auto 48px;
+
+	font: normal 700 15px/22px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #545a5e;
+}
+
+.cap-dl dl {
+	border-bottom: #ededed solid 1px;
+	padding: 0 0 14px;
+	margin: 0 0 14px;
+}
+
+.cap-dl dt,
+.cap-dl dd {
+	display: block;
+}
+
+.cap-dl dt {
+	position: relative;
+	cursor: pointer;
+}
+
+.cap-dl dt i {
+	font-size: 12px;
+	line-height: 22px;
+	display: inline-block;
+
+	position: absolute;
+	right: 0;
+	bottom: -1px;
+	height: 22px;
+	width: 16px;
+	text-align: center;	
+}
+
+.cap-dl dd {
+	font-size: 14px;
+	font-weight: 400;
+	color: #72787c;
+
+	margin: 14px 0 0;
+
+	display: none;
+}
+
