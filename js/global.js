@@ -722,6 +722,22 @@ jQuery(document).ready( function($) {
 
 	})
 
+	// Asterisks - fix "no info on asterisks" plugin bug
+	$('.mp-form-label label').each(function(i) {
+
+		const label_Str = $(this).text();
+
+		if ( label_Str.endsWith('*') ) {
+
+			const expl = label_Str.split( ':' );
+
+			$(this).html( expl[0] + ' <span style="color: red;">' + expl[1] + '<span>' );
+
+		}
+
+	})
+
+	$('.mp-form-submit').before('<div class="mepr_req_info">All fields marked with an asterisk (<span>*</span>) are required.</div>');
 
 	/* ============================================================================================
 	# Disable Sumo badge

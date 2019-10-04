@@ -7,7 +7,7 @@
  * @package cap2019
  */
 get_header();
-$sticky_posts = cap_output_stickies();
+$sticky_posts = ALL_STICKIES;
 
 // $paged - number of the current page
 global $paged, $wp_query;

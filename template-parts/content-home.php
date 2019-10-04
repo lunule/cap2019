@@ -646,13 +646,13 @@
 				$quote 			= get_field('home_perspective_quote');
 				$src 			= get_field('home_perspective_qsrc');
 
-				$name 			= $src['name'];
+				$name 			= rtrim( $src['name'] );
 				$name_Str 		= "<span class='qname'>{$name}</span>";
 				
-				$pos 			= $src['position'];
+				$pos 			= rtrim( $src['position'] );
 				$pos_Str 		= "<span class='qpos'>{$pos}</span>";
 
-				$country 		= $src['country'];
+				$country 		= rtrim( $src['country'] );
 				$country_Str 	= "<span class='qcountry'>{$country}</span>";
 
 				$cite 			= [];

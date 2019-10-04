@@ -232,32 +232,34 @@ if ( ! function_exists( 'cap_social_meta' ) ) :
 				$thumbnail 		= get_template_directory_uri() . '/img/default-thumb.jpg';
 
 			endif;
+			?>
 	 
-			// Facebook & LinkedIn 
-			echo "<meta property='og:url' content='{$permalink}' />\r\n";
-			echo "<meta property='og:type' content='article' />\r\n"; 	// note: value is 'article' 
-																		// or 'website'
-			echo "<meta property='og:title' content='{$title}' />\r\n";
-			echo "<meta property='og:description' content='{$content}' />\r\n";
-			echo "<meta property='og:site_name' content='{$sitename}' />\r\n";
+			<!-- Facebook & LinkedIn -->
+			<meta property="og:url" content="<?php echo $permalink; ?>" />
+			<meta property="og:type" content="article" />
+			<meta property="og:title" content="<?php echo $title; ?>" />
+			<meta property="og:description" content="<?php echo $content; ?>" />
+			<meta property="og:site_name" content="<?php echo $sitename; ?>" />
 		 
-			echo "<meta property='og:image' content='{$thumbnail}' />\r\n";
-			echo "<meta property='og:image:type' content='image/jpeg' />\r\n";
-			echo "<meta property='og:image:width' content='320' />\r\n";
-			echo "<meta property='og:image:height' content='208' />\r\n";
+			<meta property="og:image" content="<?php echo $thumbnail; ?>" />
+			<meta property="og:image:type" content="image/jpeg" />
+			<meta property="og:image:width" content="320" />
+			<meta property="og:image:height" content="208" />
 		 
-			// echo "<meta property='fb:app_id' content='996878443771257' />\r\n			// echo "<meta property='fb:admins' content='your-facebook-user-id' />\r\n";
+			<!-- <meta property="fb:app_id" content="996878443771257" />			
+			<meta property="fb:admins" content="your-facebook-user-id" /> -->
 	 
-	   		// Twitter card properties
-			echo "<meta name='twitter:card' content='{$content}' />\r\n";
-			echo "<meta name='twitter:site' content='@{$via}' />\r\n";
-			echo "<meta name='twitter:creator' content='@{$via}' />\r\n";
+	   		<!-- Twitter card properties -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@<?php echo $via; ?>" />
+			<meta name="twitter:creator" content="@<?php echo $via; ?>" />
 					
-			echo "<meta name='twitter:title' content='{$title}' />\r\n";
-			echo "<meta name='twitter:description' content='{$content}' />\r\n";
-			echo "<meta name='twitter:image' content='{$thumbnail}' />\r\n";
-	 		   
-	   endif;
+			<meta name="twitter:title" content="<?php echo $title; ?>" />
+			<meta name="twitter:description" content="<?php echo $content; ?>" />
+			<meta name="twitter:image" content="<?php echo $thumbnail; ?>" />
+	 
+		<?php		   
+	   	endif;
 	 
 	}
 	add_action( 'wp_head', 'cap_social_meta' );

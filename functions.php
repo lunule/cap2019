@@ -1121,7 +1121,6 @@ function post_types_author_archives($query) {
 	        							'analysis', 
 	        							'studentpost', 
 	        							'post',
-	        							'nwmember',
 			) );
 
 	    remove_action( 'pre_get_posts', 'custom_post_author_archive' );
@@ -1384,51 +1383,47 @@ function custom_posts_per_page( $query ) {
 add_action( 'pre_get_posts', 'custom_posts_per_page' );
 
 /**
- * Helper function - output array of sticky and "custom sticky" IDs.
+ * Create constant to hold the array of ALL sticky posts.
  * 
  * @return 		array 		merged array of sticky and "custom sticky" ids  
  */
-function cap_output_stickies() {
+$stickies_ID_Arr = get_option( 'sticky_posts' );
 
-	$stickies_ID_Arr = get_option( 'sticky_posts' );
+$args = array(
+	'post_type' => array('analysis', 'podcast', 'studentpost'),
+	'post_status' => 'publish',
+	'posts_per_page' => -1,
+    'meta_query' => array(
+        'relation' => 'OR',
+        'ana_clause' => array(
+            'key'     => 'cap_ana_single_sticky',
+            'value'   => true,
+        ),
+        'pod_clause' => array(
+            'key'     => 'cap_pod_single_sticky',
+            'value'   => true,
+        ), 
+        'stud_clause' => array(
+            'key'     => 'cap_stud_single_sticky',
+            'value'   => true,
+        ), 	        
+    ),		
+);
 
-	$args = array(
-		'post_type' => array('analysis', 'podcast', 'studentpost'),
-		'post_status' => 'publish',
-		'posts_per_page' => -1,
-	    'meta_query' => array(
-	        'relation' => 'OR',
-	        'ana_clause' => array(
-	            'key'     => 'cap_ana_single_sticky',
-	            'value'   => true,
-	        ),
-	        'pod_clause' => array(
-	            'key'     => 'cap_pod_single_sticky',
-	            'value'   => true,
-	        ), 
-	        'stud_clause' => array(
-	            'key'     => 'cap_stud_single_sticky',
-	            'value'   => true,
-	        ), 	        
-	    ),		
-	);
+$cstickies_Arr 		= get_posts( $args );
+$cstickies_ID_Arr 	= [];
 
-	$cstickies_Arr 		= get_posts( $args );
-	$cstickies_ID_Arr 	= [];
+foreach ( $cstickies_Arr as $post ) :
 
-	foreach ( $cstickies_Arr as $post ) :
+	setup_postdata( $post ); 
+	$cstickies_ID_Arr[] = $post->ID;
 
-		setup_postdata( $post ); 
-		$cstickies_ID_Arr[] = $post->ID;
+endforeach;
+wp_reset_postdata();
 
-	endforeach;
-	wp_reset_postdata();
+$stickies = array_merge( $stickies_ID_Arr, $cstickies_ID_Arr );
 
-	$stickies = array_merge( $stickies_ID_Arr, $cstickies_ID_Arr );
-
-	return $stickies;
-
-}
+define('ALL_STICKIES', $stickies);
 
 /**
  * Remove sticky posts from the main query results on archives.
@@ -1440,8 +1435,7 @@ function cap_remove_stickies_from_archive_query( $query ) {
 
 	if ( $query->is_archive() && $query->is_main_query() ) :
 
-		$stickies = cap_output_stickies();
-		$query->set( 'post__not_in', $stickies );
+		$query->set( 'post__not_in', ALL_STICKIES );
 
 	endif;
 
@@ -1485,7 +1479,7 @@ function memberpress_get_all_memberships( $user_id = false ){
 
 }
 
-define( 'MEMBERPRESS_TESTING', true );
+define( 'MEMBERPRESS_TESTING', false );
 
 /* Yoast SEO
 ------------------------------------------------------------------------------------------------ */
@@ -1505,17 +1499,7 @@ add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
  */
 // With a fake value the ugly default spinner gets hidden at least.
 function spinner_url( $image_src, $form ) {
-
-	if ( 3 == $form['id'] ) :
-
-	    return get_template_directory_uri() . '/img/mepr-ajax-loader.gif';
-
-	else :
-
-	    return "http://www.somedomain.com/spinner.png";
-
-	endif;
-
+    return "http://www.somedomain.com/spinner.png";
 }
 add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
 
@@ -1584,11 +1568,11 @@ function remove_tax_parent_dropdown() {
         } elseif ( 'term' == $screen->base ) {
             $parent = "$('label[for=parent]').parent().parent()";
         }
-    /* } elseif ( 'post' == $screen->post_type ) {
-        $parent = "$('#newcategory_parent')"; */
+    } /* elseif ( 'post' == $screen->post_type ) {
+        $parent = "$('#newcategory_parent')";
     } else {
         return;
-    }
+    } */
     ?>
 
     <script type="text/javascript">
@@ -1654,62 +1638,6 @@ function my_acf_save_post( $post_id ) {
 }
 
 add_action('acf/save_post', 'my_acf_save_post', 20);
-
-/** 
- * Filter the d_resource_on_page Post Object field query (Resource Settings)
- * 
- * @see  https://support.advancedcustomfields.com/forums/topic/populate-post-object-with-posts-using-specific-template/
- */
-function filter_d_resource_on_page_query( $args, $field, $post_id ) {
-
-    $args['meta_query'] = array( 
-        array(
-            'key'   => '_wp_page_template', 
-            'value' => 'page-resource-center-subs.php'
-        )
-    );
-
-	// return
-    return $args;
-    
-}
-// add_filter('acf/fields/post_object/query/name=d_resource_on_page', 'filter_d_resource_on_page_query', 10, 3);
-
-/**
- * Hide the ACF menu - except from (...)
- *
- * @see https://www.advancedcustomfields.com/resources/how-to-hide-acf-menu-from-clients/
- * 
- * @param  [type] $show [description]
- * @return [type]       [description]
- */
-add_filter('acf/settings/show_admin', 'my_acf_show_admin');
-
-function my_acf_show_admin( $show ) {
-    
-	$user_id = get_current_user_id();
-
-    return ( current_user_can('manage_options') && ( 1 == $user_id ) );
-    
-}
-
-/*function cap_acf_save_post( $post_id ) {
-
-	if ( get_post_type( $post_id ) ) :
-
-		// get new value
-		$lang 			= get_field('net_lang', $post_id);
-		$lang_others 	= get_field('net_lang_others', $post_id);
-
-		$newval = '?';	    
-
-		// update the 
-		update_field('net_lang_all', $newval, $post_id);
-
-	endif;
-
-}
-add_action( 'save_post', 'cap_acf_save_post' ); */
 
 /**
  * ACF Blocks

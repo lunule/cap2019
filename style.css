@@ -8991,6 +8991,30 @@ table.posts-data-table.dtr-inline.collapsed > tbody > tr[role=row] > th:first-ch
 
 	/* Errors and Other Form Messages */
 
+.mepr_req_info {
+	font-size: .8em; 
+	line-height: .8em; 
+	color: #777; 
+	font-weight: bold; 
+	margin: 9px 0 0; 
+	border-bottom: #ddd solid 1px; 
+	padding-bottom: 3px;
+}
+
+.mepr_req_info span {
+	color: red; 
+	margin: 0 5px;
+}
+
+@media ( max-width: 420px ) {
+
+	.mepr_req_info {
+		border: #ddd solid 1px;
+		padding: 9px;
+	}
+
+}
+
 [id*='post-'] .mp_wrapper .mepr_error {
     background-color: transparent!important;
     border: none!important;
@@ -9148,6 +9172,11 @@ table.posts-data-table.dtr-inline.collapsed > tbody > tr[role=row] > th:first-ch
 	  flex-basis: 100%;
 	  max-width: 566px;		
 	}	
+
+	.subscribe--benefits, 
+	.subscribe--gomonthly {
+		max-width: 566px;
+	}
 
 	.subscribe--topleft,
 	.subscribe--topquote { 
